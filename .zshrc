@@ -4,7 +4,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -z $STY ]
+if [[ -z "$STY" ]]
 then
   screen -xR
 fi
