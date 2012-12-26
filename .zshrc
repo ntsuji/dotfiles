@@ -6,5 +6,5 @@ source $ZSH/oh-my-zsh.sh
 
 if [ -z $STY ]
 then
-	screen -xR
+  screen -xR
 fi
