@@ -10,6 +10,6 @@ do
 	then
 		ln -s "$srcdir"/"$dotfile" ~/"$dotfile"
 	else
-		runas /user:administrator "mklink `cygpath -w ~/"$dotfile"` `cygpath -w "$srcdir"/"$dotfile"`"
+		runas /user:administrator "mklink "`cygpath -w ~/"$dotfile"`" "`cygpath -w "$srcdir"/"$dotfile"`""
 	fi
 done
