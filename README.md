@@ -23,6 +23,6 @@
 $ rm ~/.screenrc
 $ rm ~/.zshrc
 $ cd PATH/TO/dotfiles
-$ ln -s ~/.screenrc .screenrc
-$ ln -s ~/.zshrc .zshrc
+$ ln -s .screenrc ~/.screenrc
+$ ln -s .zshrc ~/.zshrc
   ```
