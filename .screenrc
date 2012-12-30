@@ -1,3 +1,6 @@
 altscreen on
-hardstatus alwayslastline '%{= kg}[ %{G}%H %{g}][ %= %{w}%?%-Lw%? %{r}( %{W}%n*%f%t%?(%u)%? %{r}) %{w}%?%+Lw%?%? %= %{g}][ %{B}%m/%d %{W}%c %{g}]'
 termcapinfo xterm* ti@:te@
+termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+hardstatus off
+hardstatus string '(%n*%f%t)'
+caption always '%{= kg}[ %{G}%H %{g}][%= %{w}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%m/%d %{W}%c %{g}]'

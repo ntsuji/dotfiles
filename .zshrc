@@ -4,7 +4,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ -z "$STY" ]]
+export LANG=ja_JP.UTF-8
+
+if [ -z "$STY" ]
 then
-  screen -xR
+	screen -xR
 fi
