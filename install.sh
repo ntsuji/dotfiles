@@ -4,7 +4,14 @@ cd "`dirname "$0"`"
 
 for dotfile in `cat .gitignore | grep '^!\.' | grep -v '^!\.git' | sed 's/^!//g'`
 do
-	mv -f "$HOME/$dotfile" "$HOME/$dotfile".bak
+	if [ -e "$HOME/$dotfile" -a ! -e "$HOME/$dotfile".bak \
+		-a "`ls -al "$HOME" | fgrep " $dotfile " | sed 's/.*-> \(.*\)/\1/'`" != "$PWD/$dotfile" ]
+	then
+		mv "$HOME/$dotfile" "$HOME/$dotfile.bak"
+	else
+		rm -rf "$HOME/$dotfile"
+	fi
+
 	if [ -z "$CYGWIN" ]
 	then
 		ln -s "$PWD/$dotfile" "$HOME"
