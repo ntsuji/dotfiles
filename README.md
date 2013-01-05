@@ -4,10 +4,12 @@
 
 ### Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-### Git Clone dotfiles
+### Git Clone `dotfiles`
 
 ### Run `install.sh`
 
 ## Uninstall
 
 ### Run `uninstall.sh`
+
+### Remove `dotfiles`
