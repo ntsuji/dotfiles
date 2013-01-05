@@ -1,7 +1,13 @@
 # How to use
 
-## Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+## Install
 
-## Git Clone dotfiles
+### Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-## Run install.sh
+### Git Clone dotfiles
+
+### Run `install.sh`
+
+## Uninstall
+
+### Run `uninstall.sh`
