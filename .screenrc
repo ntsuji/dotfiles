@@ -1,4 +1,4 @@
 altscreen on
-termcapinfo xterm* 'ti@:te@, hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+termcapinfo xterm* 'ti@:te@:hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
 hardstatus string '(%n*%f%t)'
 caption always '%{= kg}[ %{G}%H %{g}][%= %{w}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%m/%d %{W}%c %{g}]'
