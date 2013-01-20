@@ -1,16 +1,21 @@
 #!/bin/sh
 
-cd "`dirname "$0"`"
+cd "`dirname "${0}"`"
 
-for dotfile in `cat .gitignore | grep '^!\.' | grep -v '^!\.git' | sed 's/^!//g' | sed 's/\/$//g'`
+for symlink in `ls | grep '\.symlink$'`
 do
-	if [ -e "$HOME/$dotfile" -a ! -e "$HOME/$dotfile.bak" \
-		-a "`ls -al "$HOME" | fgrep " $dotfile " | sed 's/.*-> \(.*\)/\1/' | sed 's/\/$//'`" != "$PWD/$dotfile" ]
+	dotfile="`echo ${symlink} | sed 's/\(.*\)\.symlink/.\1/'`"
+
+	src="${PWD}/${symlink}"
+	dest="${HOME}/${dotfile}"
+	backup="${HOME}/${dotfile}.bak"
+
+	if [ -e "${dest}" -a ! -e "${backup}" -a "`readlink "${dest}"`" != "${src}" ]
 	then
-		mv "$HOME/$dotfile" "$HOME/$dotfile.bak"
+		mv "${dest}" "${HOME}/${backup}"
 	else
-		rm -rf "$HOME/$dotfile"
+		rm -rf "${dest}"
 	fi
 
-	ln -s "$PWD/$dotfile" "$HOME"
+	ln -s "${src}" "${dest}"
 done
