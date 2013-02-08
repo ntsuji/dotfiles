@@ -2,7 +2,7 @@
 
 cd "`dirname "${0}"`"
 
-for symlink in `ls | grep '\.symlink$'`
+for symlink in `ls *.symlink`
 do
 	dotfile="`echo ${symlink} | sed 's/\(.*\)\.symlink/.\1/'`"
 
