@@ -12,7 +12,7 @@ do
 
 	if [ -e "${dest}" -a ! -e "${backup}" -a "`readlink "${dest}"`" != "${src}" ]
 	then
-		mv "${dest}" "${HOME}/${backup}"
+		mv "${dest}" "${backup}"
 	else
 		rm -rf "${dest}"
 	fi
