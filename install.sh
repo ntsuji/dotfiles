@@ -7,15 +7,15 @@ do
 	dotfile="`echo ${symlink} | sed 's/\(.*\)\.symlink/.\1/'`"
 
 	src="${PWD}/${symlink}"
-	dst="${HOME}/${dotfile}"
+	dest="${HOME}/${dotfile}"
 	backup="${HOME}/${dotfile}.bak"
 
-	if [ -e "${dst}" -a ! -e "${backup}" -a "`readlink "${dst}"`" != "${src}" ]
+	if [ -e "${dest}" -a ! -e "${backup}" -a "`readlink "${dest}"`" != "${src}" ]
 	then
-		mv "${dst}" "${backup}"
+		mv "${dest}" "${backup}"
 	else
-		rm -rf "${dst}"
+		rm -rf "${dest}"
 	fi
 
-	ln -s "${src}" "${dst}"
+	ln -s "${src}" "${dest}"
 done

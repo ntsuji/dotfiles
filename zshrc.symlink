@@ -4,9 +4,10 @@ fpath=(${zshrcDir}/zsh-completions/src $fpath)
 
 ZSH="${zshrcDir}/oh-my-zsh"
 ZSH_THEME='robbyrussell'
-plugins=(git z history-substring-search)
+plugins=(git)
 
 source "${ZSH}/oh-my-zsh.sh"
-source "${zshrcDir}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 export LANG='ja_JP.UTF-8'
+
+. "${zshrcDir}/z/z.sh"
