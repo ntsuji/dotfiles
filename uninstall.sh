@@ -2,20 +2,20 @@
 
 cd "`dirname "${0}"`"
 
-for symlink in `ls *.symlink`
+for symlink in `ls | grep "\.symlink$"`
 do
 	dotfile="`echo ${symlink} | sed 's/\(.*\)\.symlink/.\1/'`"
 
 	src="${PWD}/${symlink}"
-	dest="${HOME}/${dotfile}"
+	dst="${HOME}/${dotfile}"
 	backup="${HOME}/${dotfile}.bak"
 
-	if [ "`readlink "${dest}"`" = "${src}" ]
+	if [ "`readlink "${dst}"`" = "${src}" ]
 	then
-		rm "${dest}"
+		rm "${dst}"
 		if [ -e "${backup}" ]
 		then
-			mv "${backup}" "${dest}"
+			mv "${backup}" "${dst}"
 		fi
 	fi
 done

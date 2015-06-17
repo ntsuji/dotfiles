@@ -1,13 +1,9 @@
-zshrcDir="$(dirname "$(readlink "${HOME}/.zshrc")")"
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-fpath=(${zshrcDir}/zsh-completions/src $fpath)
+dotfiles="$(dirname "$(readlink "${HOME}/.zprezto")")"
 
-ZSH="${zshrcDir}/oh-my-zsh"
-ZSH_THEME='robbyrussell'
-plugins=(git)
-
-source "${ZSH}/oh-my-zsh.sh"
+. "${dotfiles}/z/z.sh"
 
 export LANG='ja_JP.UTF-8'
-
-. "${zshrcDir}/z/z.sh"
