@@ -1,6 +1,6 @@
 zshrcDir="$(dirname "$(readlink "${HOME}/.zshrc")")"
 
-path=(${zshrcDir}/fasd(N-/) ${path})
+path=("${zshrcDir}/fasd"(N-/) ${path})
 
 export LANG='ja_JP.UTF-8'
 
