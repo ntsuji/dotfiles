@@ -1,6 +1,6 @@
-dotfiles="$(dirname "$(readlink "${HOME}/.zprezto")")"
+zshrcDir="$(dirname "$(readlink "${HOME}/.zshrc")")"
 
-path=(${dotfiles}/fasd(N-/) ${path})
+path=(${zshrcDir}/fasd(N-/) ${path})
 
 export LANG='ja_JP.UTF-8'
 
