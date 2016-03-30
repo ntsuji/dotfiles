@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "${0}")"
-for symlink in "$(ls -d *.symlink)"; do
+for symlink in $(ls -d *.symlink); do
   dotfile=".${symlink%%.*}"
   src="${PWD}/${symlink}"
   dst="${HOME}/${dotfile}"
